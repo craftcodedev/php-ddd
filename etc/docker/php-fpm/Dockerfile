@@ -32,5 +32,5 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash && mv /root/.symfony/
 WORKDIR /var/www/app
 
 #Create symfony project
-RUN symfony new /var/www/app --version=4.* --no-git
+#RUN symfony new /var/www/app --version=4.* --no-git
 
