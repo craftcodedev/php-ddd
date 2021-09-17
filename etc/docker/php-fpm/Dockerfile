@@ -24,7 +24,13 @@ RUN apt-get update -qq && \
     bcmath \
     sockets
 
+#RUN git config --global user.email "hello@craft-code.com"
+#RUN git config --global user.name "Craft Code"
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN wget https://get.symfony.com/cli/installer -O - | bash && mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
 WORKDIR /var/www/app
+
+#Create symfony project
+RUN symfony new /var/www/app --version=4.* --no-git
+
