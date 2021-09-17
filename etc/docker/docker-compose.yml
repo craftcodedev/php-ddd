@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  application_nginx:
+    image: nginx:1.13
+    container_name: ddd_application_nginx
+    environment:
+      TZ: Europe/Madrid
+    volumes:
+      - ./../../:/var/www/app
+      - ./nginx/symfony.conf:/etc/nginx/conf.d/symfony.conf
+    depends_on:
+      - application_php
+    ports:
+      - "8080:80"
+  application_php:
+    build: ./php-fpm
+    container_name: ddd_application_php
+    environment:
+      TZ: Europe/Madrid
+      MYSQL_HOST: ddd_application_db
+      MYSQL_PORT: 3306
+      MYSQL_APP_DATABASE: app
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    depends_on:
+      - application_db
+    ports:
+      - 9000:9000
+    volumes:
+      - ./../../:/var/www/app:cached
+      - ./php-fpm/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
+    entrypoint: /var/www/app/etc/docker/php-fpm/run.sh
+  application_db:
+    image: mysql:5.6
+    container_name: ddd_application_db
+    restart: always
+    environment:
+      TZ: Europe/Madrid
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_DATABASE: app
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/dump.sql
+    ports:
+      - "3318:3306"
