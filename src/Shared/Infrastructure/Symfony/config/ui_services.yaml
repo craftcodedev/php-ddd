@@ -1,0 +1,3 @@
+services:
+  App\Shared\UI\HTTP\Rest\Controller\ApiRestController:
+    abstract: true

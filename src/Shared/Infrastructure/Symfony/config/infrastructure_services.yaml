@@ -1,0 +1,42 @@
+services:
+  App\Shared\Infrastructure\Bus\Command\CommandHandlerRepository:
+    autowire: false
+    arguments:
+      - !tagged_iterator 'app.command_handler'
+  App\Shared\Infrastructure\Bus\Command\Middleware\EventDispatcherMiddleware:
+    autowire: true
+    tags:
+      - {name: 'app.middleware.command', priority: 4}
+  App\Shared\Infrastructure\Bus\Command\Middleware\DoctrineTransactionMiddleware:
+    autowire: true
+    tags:
+      - {name: 'app.middleware.command', priority: 3}
+  App\Shared\Infrastructure\Bus\Command\Middleware\CustomizeExceptionMiddleware:
+    autowire: true
+    tags:
+      - {name: 'app.middleware.command', priority: 2}
+  App\Shared\Infrastructure\Bus\Command\Middleware\EventPublisherMiddleware:
+    autowire: false
+    arguments:
+      - '@App\Shared\Domain\Bus\Event\EventProvider'
+      - !tagged_iterator 'app.event_publisher'
+    tags:
+      - {name: 'app.middleware.command', priority: 1}
+  App\Shared\Infrastructure\Bus\Command\CommandBus:
+    autowire: false
+    arguments:
+      - '@App\Shared\Infrastructure\Security\Authorization\AuthorizationRepository'
+      - '@App\Shared\Infrastructure\Bus\Command\CommandHandlerRepository'
+      - !tagged_iterator 'app.middleware.command'
+  App\Shared\Infrastructure\Bus\Query\QueryHandlerRepository:
+    autowire: false
+    arguments:
+      - !tagged_iterator 'app.query_handler'
+  App\Shared\Infrastructure\Bus\Event\EventHandlerRepository:
+    autowire: false
+    arguments:
+      - !tagged_iterator 'app.event_handler'
+  App\Shared\Infrastructure\Security\Authorization\AuthorizationRepository:
+    autowire: false
+    arguments:
+      - !tagged_iterator 'app.authorization'
