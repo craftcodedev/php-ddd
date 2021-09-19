@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Shared\Infrastructure\Symfony\config\ConfigFileSearcher;
+use App\Shared\Infrastructure\Symfony\config\RoutesImporter;
+use App\Shared\Infrastructure\Symfony\config\ServicesImporter;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;
@@ -22,6 +25,11 @@ class Kernel extends BaseKernel
         } else {
             $container->import('../config/{services}.php');
         }
+
+        $root = $this->getProjectDir().'/src';
+        $configFileRepository = new ConfigFileSearcher();
+        $routesImporter = new ServicesImporter($configFileRepository, $container);
+        $routesImporter->__invoke($root);
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void
@@ -34,5 +42,10 @@ class Kernel extends BaseKernel
         } else {
             $routes->import('../config/{routes}.php');
         }
+
+        $root = $this->getProjectDir().'/src';
+        $configFileRepository = new ConfigFileSearcher();
+        $routesImporter = new RoutesImporter($configFileRepository, $routes);
+        $routesImporter->__invoke($root);
     }
 }
