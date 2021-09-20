@@ -1,0 +1,16 @@
+App\IAM\Token\Domain\Token:
+  type: entity
+  table: token
+  embedded:
+    userId:
+      class:  App\IAM\Token\Domain\TokenUserId
+      columnPrefix: false
+    hash:
+      class:  App\IAM\Token\Domain\TokenHash
+      columnPrefix: false
+    createdAt:
+      class:  App\IAM\Token\Domain\TokenCreatedAt
+      columnPrefix: false
+    updatedAt:
+      class:  App\IAM\Token\Domain\TokenUpdatedAt
+      columnPrefix: false

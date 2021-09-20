@@ -1,0 +1,34 @@
+App\IAM\User\Domain\User:
+  type: entity
+  table: user
+  embedded:
+    id:
+      class:  App\IAM\User\Domain\UserId
+      columnPrefix: false
+    email:
+      class: App\IAM\User\Domain\UserEmail
+      columnPrefix: false
+    password:
+      class: App\IAM\User\Domain\UserHashedPassword
+      columnPrefix: false
+    firstName:
+      class: App\IAM\User\Domain\UserFirstName
+      columnPrefix: false
+    lastName:
+      class: App\IAM\User\Domain\UserLastName
+      columnPrefix: false
+    phone:
+      class: App\IAM\User\Domain\UserPhone
+      columnPrefix: false
+    roles:
+      class: App\IAM\User\Domain\UserRoles
+      columnPrefix: false
+    status:
+      class: App\IAM\User\Domain\UserStatus
+      columnPrefix: false
+    createdAt:
+      class: App\IAM\User\Domain\UserCreatedAt
+      columnPrefix: false
+    updatedAt:
+      class: App\IAM\User\Domain\UserUpdatedAt
+      columnPrefix: false

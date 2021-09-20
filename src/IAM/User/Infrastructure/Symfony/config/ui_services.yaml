@@ -1,0 +1,5 @@
+services:
+    app.iam.user.ui.http.rest.controller.user_put_controller:
+        class: App\IAM\User\UI\HTTP\Rest\Controller\UserPutController
+        parent: App\Shared\UI\HTTP\Rest\Controller\ApiRestController
+        tags: [ 'controller.service_arguments' ]

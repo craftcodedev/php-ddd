@@ -1,0 +1,5 @@
+services:
+    app.iam.token.ui.http.rest.controller.token_post_controller:
+        class: App\IAM\Token\UI\HTTP\Rest\Controller\TokenPostController
+        parent: App\Shared\UI\HTTP\Rest\Controller\ApiRestController
+        tags: [ 'controller.service_arguments' ]

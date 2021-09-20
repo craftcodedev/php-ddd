@@ -1,0 +1,7 @@
+App\IAM\User\Domain\UserEmail:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      length: 60
+      column: email

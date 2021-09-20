@@ -1,0 +1,6 @@
+App\IAM\User\Domain\UserCreatedAt:
+  type: embeddable
+  fields:
+    value:
+      type: datetime
+      column: created_at

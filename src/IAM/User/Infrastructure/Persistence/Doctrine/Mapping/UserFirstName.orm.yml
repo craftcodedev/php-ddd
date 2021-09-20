@@ -1,0 +1,7 @@
+App\IAM\User\Domain\UserFirstName:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      length: 40
+      column: first_name

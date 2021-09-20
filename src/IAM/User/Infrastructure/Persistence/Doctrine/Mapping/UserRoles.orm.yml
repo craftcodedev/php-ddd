@@ -1,0 +1,7 @@
+App\IAM\User\Domain\UserRoles:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      length: 20
+      column: roles

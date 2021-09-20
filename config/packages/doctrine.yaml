@@ -17,9 +17,15 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            App:
+            UserModelNamespace:
                 is_bundle: false
-                type: annotation
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
+                type: yml
+                dir: '%kernel.project_dir%/src/IAM/User/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'App\IAM\User\Domain'
+                alias: App
+            TokenModelNamespace:
+                is_bundle: false
+                type: yml
+                dir: '%kernel.project_dir%/src/IAM/Token/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'App\IAM\Token\Domain'
                 alias: App

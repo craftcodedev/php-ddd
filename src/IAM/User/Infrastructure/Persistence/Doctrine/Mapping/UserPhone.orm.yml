@@ -1,0 +1,7 @@
+App\IAM\User\Domain\UserPhone:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      length: 30
+      column: phone

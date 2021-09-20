@@ -1,0 +1,7 @@
+App\IAM\User\Domain\UserStatus:
+  type: embeddable
+  fields:
+    value:
+      type: string
+      length: 15
+      column: status

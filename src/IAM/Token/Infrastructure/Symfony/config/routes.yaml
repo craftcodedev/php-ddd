@@ -1,0 +1,4 @@
+app_iam_token_create:
+  path: /tokens
+  methods: [POST, OPTIONS]
+  controller: App\IAM\Token\UI\HTTP\Rest\Controller\TokenPostController

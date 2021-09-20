@@ -1,0 +1,4 @@
+app_iam_user_sign_up:
+  path: /users
+  methods: [PUT, OPTIONS]
+  controller: App\IAM\User\UI\HTTP\Rest\Controller\UserPutController

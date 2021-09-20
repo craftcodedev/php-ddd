@@ -1,0 +1,6 @@
+App\IAM\Token\Domain\TokenUpdatedAt:
+  type: embeddable
+  fields:
+    value:
+      type: datetime
+      column: updated_at

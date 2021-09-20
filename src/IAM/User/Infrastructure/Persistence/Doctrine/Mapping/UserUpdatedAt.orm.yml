@@ -1,0 +1,6 @@
+App\IAM\User\Domain\UserUpdatedAt:
+  type: embeddable
+  fields:
+    value:
+      type: datetime
+      column: updated_at

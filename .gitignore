@@ -9,3 +9,7 @@ var
 /etc/docker/docker-sync.yml
 /etc/docker/init-macos.sh
 /etc/docker/.docker-sync
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
