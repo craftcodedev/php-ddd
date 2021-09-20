@@ -3,7 +3,7 @@ var
 .idea
 
 ###> lexik/jwt-authentication-bundle ###
-/config/jwt/*.pem
+#/config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
 /etc/docker/docker-compose.macos.yml
 /etc/docker/docker-sync.yml
