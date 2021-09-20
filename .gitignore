@@ -5,3 +5,7 @@ var
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###
+/etc/docker/docker-compose.macos.yml
+/etc/docker/docker-sync.yml
+/etc/docker/init-macos.sh
+/etc/docker/.docker-sync

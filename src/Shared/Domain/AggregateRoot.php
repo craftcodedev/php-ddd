@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain;
-
 
 use App\Shared\Domain\Bus\Event\DomainEvent;
 

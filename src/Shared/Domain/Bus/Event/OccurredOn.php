@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain\Bus\Event;
-
 
 use App\Shared\Domain\DateValueObject;
 

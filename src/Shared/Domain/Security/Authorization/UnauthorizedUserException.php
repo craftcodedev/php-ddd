@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain\Security\Authorization;
-
 
 use App\Shared\Domain\Exception\WarningException;
 

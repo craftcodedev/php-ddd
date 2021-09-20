@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain;
-
 
 use App\Shared\Domain\Bus\Query\Response\ResponseInterface;
 
@@ -12,7 +10,7 @@ abstract class Collection
 
     public function __construct()
     {
-        $this->items = array();
+        $this->items = [];
     }
 
     public function add($item)

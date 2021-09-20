@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Infrastructure\Bus\Query;
-
 
 use App\Shared\Domain\Bus\Query\QueryHandlerInterface;
 
@@ -20,12 +18,13 @@ final class QueryHandlerRepository
         /** @var QueryHandlerInterface $handler */
         foreach (iterator_to_array($handlers) as $handler) {
             $queryHandlerName = get_class($handler);
-            $query = str_replace("QueryHandler", "Query", $queryHandlerName);
+            $query = str_replace('QueryHandler', 'Query', $queryHandlerName);
             $this->handlers[$query] = $handler;
         }
     }
 
-    public function findByQuery(string $query): QueryHandlerInterface {
+    public function findByQuery(string $query): QueryHandlerInterface
+    {
         if (!isset($this->handlers[$query])) {
             throw QueryHandlerNotFoundException::fromQuery($query);
         }

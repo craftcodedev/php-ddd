@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain\Criteria;
-
 
 use App\Shared\Domain\Exception\InvalidAttributeException;
 use App\Shared\Domain\StringValueObject;
@@ -15,7 +13,7 @@ final class OrderDirection extends StringValueObject
             throw InvalidAttributeException::fromEmpty('order field');
         }
 
-        $this->value = ($value === '-') ? 'DESC' : 'ASC';
+        $this->value = ('-' === $value) ? 'DESC' : 'ASC';
     }
 
     public static function byDefault(): OrderDirection
