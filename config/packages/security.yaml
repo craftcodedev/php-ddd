@@ -14,8 +14,8 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         #main:
-            #lazy: true
-            #provider: users_in_memory
+        #    lazy: true
+        #    provider: users_in_memory
         api:
             pattern: ^/api/v1
             stateless: true
