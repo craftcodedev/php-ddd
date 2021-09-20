@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Infrastructure\Persistence\Doctrine;
-
 
 use App\Shared\Domain\Criteria\Criteria;
 use App\Shared\ReadModel\ReadModelInterface;

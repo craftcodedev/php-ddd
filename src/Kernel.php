@@ -26,7 +26,7 @@ class Kernel extends BaseKernel
             $container->import('../config/{services}.php');
         }
 
-        $root = $this->getProjectDir().'/src';
+        $root = $this->getProjectDir() . '/src';
         $configFileRepository = new ConfigFileSearcher();
         $routesImporter = new ServicesImporter($configFileRepository, $container);
         $routesImporter->__invoke($root);
@@ -43,7 +43,7 @@ class Kernel extends BaseKernel
             $routes->import('../config/{routes}.php');
         }
 
-        $root = $this->getProjectDir().'/src';
+        $root = $this->getProjectDir() . '/src';
         $configFileRepository = new ConfigFileSearcher();
         $routesImporter = new RoutesImporter($configFileRepository, $routes);
         $routesImporter->__invoke($root);

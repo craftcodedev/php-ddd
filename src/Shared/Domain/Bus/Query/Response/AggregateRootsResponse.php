@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain\Bus\Query\Response;
-
 
 use App\Shared\Domain\Collection;
 

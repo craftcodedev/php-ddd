@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Infrastructure\Service\Serializer;
-
 
 use App\Shared\Domain\Exception\ErrorException;
 

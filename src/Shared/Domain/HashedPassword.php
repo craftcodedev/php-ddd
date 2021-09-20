@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain;
-
 
 final class HashedPassword extends StringValueObject
 {

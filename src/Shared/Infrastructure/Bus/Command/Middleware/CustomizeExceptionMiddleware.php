@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Infrastructure\Bus\Command\Middleware;
-
 
 use App\Shared\Domain\Bus\Command\CommandInterface;
 use App\Shared\Infrastructure\Bus\Command\Middleware\Exception\ResourceAlreadyExistsException;

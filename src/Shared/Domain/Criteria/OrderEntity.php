@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Shared\Domain\Criteria;
-
 
 use App\Shared\Domain\StringValueObject;
 

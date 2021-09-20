@@ -1,15 +1,13 @@
 <?php
 
-
 namespace App\Shared\Domain\Exception;
-
 
 class Exception extends \Exception
 {
     public $text;
     public $parameters;
 
-    public function __construct($text = "", array $parameters = [], int $code = 0, \Throwable $previous = null)
+    public function __construct($text = '', array $parameters = [], int $code = 0, \Throwable $previous = null)
     {
         $this->text = $text;
         $this->parameters = $parameters;
@@ -20,7 +18,7 @@ class Exception extends \Exception
 
     public static function create(string $message)
     {
-        $exception =  new static($message, []);
+        $exception = new static($message, []);
 
         return $exception;
     }
