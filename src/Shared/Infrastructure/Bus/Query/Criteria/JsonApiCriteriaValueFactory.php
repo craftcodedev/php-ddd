@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Shared\Domain\Bus\Query\Criteria;
+namespace App\Shared\Infrastructure\Bus\Query\Criteria;
 
-
+use App\Shared\Domain\Bus\Query\Criteria\CriteriaValueFactoryInterface;
 use App\Shared\Domain\Criteria\Filter;
 use App\Shared\Domain\Criteria\Limit;
 use App\Shared\Domain\Criteria\Offset;
