@@ -3,3 +3,11 @@ services:
         class: App\IAM\User\UI\HTTP\Rest\Controller\UserPutController
         parent: App\Shared\UI\HTTP\Rest\Controller\ApiRestController
         tags: [ 'controller.service_arguments' ]
+    app.iam.user.ui.http.rest.controller.user_get_controller:
+        class: App\IAM\User\UI\HTTP\Rest\Controller\UserGetController
+        parent: App\Shared\UI\HTTP\Rest\Controller\ApiRestController
+        tags: ['controller.service_arguments']
+    app.iam.user.ui.http.rest.controller.users_get_controller:
+        class: App\IAM\User\UI\HTTP\Rest\Controller\UsersGetController
+        parent: App\Shared\UI\HTTP\Rest\Controller\ApiRestController
+        tags: [ 'controller.service_arguments' ]

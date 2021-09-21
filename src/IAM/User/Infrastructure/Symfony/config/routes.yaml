@@ -2,3 +2,13 @@ app_iam_user_sign_up:
   path: /users
   methods: [PUT, OPTIONS]
   controller: App\IAM\User\UI\HTTP\Rest\Controller\UserPutController
+
+app_iam_user_get:
+  path: /users/{id}
+  methods: [ GET, OPTIONS ]
+  controller: App\IAM\User\UI\HTTP\Rest\Controller\UserGetController
+
+app_iam_users_get:
+  path: /users
+  methods: [ GET, OPTIONS ]
+  controller: App\IAM\User\UI\HTTP\Rest\Controller\UsersGetController
